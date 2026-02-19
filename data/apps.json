@@ -6,5 +6,14 @@
     "size": "APK size",
     "apkFile": "application-680b8d1f-5a6b-43d7-827d-75ee5d424b98.apk",
     "icon": "mon-app.png"
+  },
+
+  {
+    "name": "glowHabiy",
+    "description": "Yon Aplikasyon pou kontrole abitiid",
+    "version": "1.0.0",
+    "size": "APK size",
+    "apkFile": "application-d9ea0dc9-6528-471b-902d-9f99a783c7ca.apk",
+    "icon": "habit-tracker.png"
   }
 ]
