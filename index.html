@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher's APK Store</title>
+  <!-- CSS file linked (inline fallback + external) -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* fallback / inline style to ensure variables & basics even if external missing */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    :root { --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --text-light: #475569; --accent: #10b981; --accent-dark: #059669; --border: #e2e8f0; --shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02); --radius: 1.5rem; --radius-sm: 0.75rem; }
+    body { background: var(--bg); color: var(--text); line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <!-- STICKY HEADER with search bar -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo-area">
+        <span class="logo-icon">📦</span>
+        <span class="logo-text">APK<span class="light">hub</span></span>
+      </div>
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search apps...">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: app cards grid -->
+  <main class="container main-content">
+    <div class="apps-grid" id="appsGrid">
+      <!-- dynamically filled from apps.json -->
+      <div class="loading-message">Loading amazing apps...</div>
+    </div>
+  </main>
+
+  <!-- SIMPLE FOOTER -->
+    <!-- SIMPLE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">📦</span>
+          <span class="logo-text">APK<span class="light">hub</span></span>
+        </div>
+        
+        <div class="footer-info">
+          <p class="footer-name">Christopher's APK Store</p>
+          <p class="footer-desc">Telechaje aplikasyon android ou yo gratis epi fasil</p>
+        </div>
+        
+        <div class="footer-credits">
+          <p>Kreye ak ❤️ pa <strong>Christopher</strong></p>
+          <p class="copyright">&copy; 2026 - Tout dwa rezève</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: no frameworks, pure vanilla -->
+  <script src="js/app.js"></script>
+  <script>
+    // ensure app.js works even if path fails – inline backup
+    (function() {
+      // if app.js didn't load or fails, we still want something
+      window.__INLINE_FALLBACK = true;
+    })();
+  </script>
+  <!-- inline hidden json example (real data loads via fetch) -->
+</body>
+</html>
