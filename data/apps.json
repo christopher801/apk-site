@@ -23,5 +23,13 @@
     "size": "57.7 MB",
     "apkFile": "application-62e66f6f-3111-44b5-beee-9946081326fd.apk",
     "icon": "currency.png"
+  },
+  {
+    "name": "Calculator",
+    "description": "Calculator se yon aplikasyon rapid ak presi pou fè kalkil chak jou fasil.",
+    "version": "1.0.9",
+    "size": "55.6 MB",
+    "apkFile": "application-ada8ef86-f0bc-484e-ae59-331dfcdd3d0d.apk",
+    "icon": "calculator.png"
   }
 ]
