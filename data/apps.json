@@ -1,7 +1,7 @@
 [
   {
     "name": "Xpenso",
-    "description": "Yon bèl aplikasyon pou telefòn android.",
+    "description": "Xpenso ede w swiv depans ou fasil epi jere lajan ou pi byen chak jou.",
     "version": "1.0.0",
     "size": "APK size",
     "apkFile": "application-680b8d1f-5a6b-43d7-827d-75ee5d424b98.apk",
@@ -9,11 +9,19 @@
   },
 
   {
-    "name": "glowHabiy",
-    "description": "Yon Aplikasyon pou kontrole abitiid",
+    "name": "GlowHabit",
+    "description": "GlowHabit ede w bati epi swiv bon abitid chak jou.",
     "version": "1.0.0",
     "size": "APK size",
     "apkFile": "application-d9ea0dc9-6528-471b-902d-9f99a783c7ca.apk",
     "icon": "habit-tracker.png"
+  },
+  {
+    "name": "Currency",
+    "description": "Currency se yon aplikasyon pou konvèti lajan an tan reyèl, ak yon entèfas presi, rapid, epi fasil pou itilize.",
+    "version": "1.0.0",
+    "size": "57.7 MB",
+    "apkFile": "application-62e66f6f-3111-44b5-beee-9946081326fd.apk",
+    "icon": "currency.png"
   }
 ]
