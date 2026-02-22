@@ -31,5 +31,13 @@
     "size": "55.6 MB",
     "apkFile": "application-ada8ef86-f0bc-484e-ae59-331dfcdd3d0d.apk",
     "icon": "calculator.png"
+  },
+  {
+    "name": "Xuper",
+    "description": "App pou decouvri api swiv fim ou renmen yo fasil.",
+    "version": "6.2.1",
+    "size": "34.35 MB",
+    "apkFile": "Xuper.apk",
+    "icon": "xuper.png"
   }
 ]
