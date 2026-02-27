@@ -39,5 +39,13 @@
     "size": "34.35 MB",
     "apkFile": "Xuper.apk",
     "icon": "xuper.png"
+  },
+  {
+    "name": "windowcalc",
+    "description": "App pou kalkile cotizaciones fenèt an poulgadas, rapid e offline.",
+    "version": "1.0.0",
+    "size": "69.1MB",
+    "apkFile": "application-8e2dd580-332e-4c04-830f-2ba993bc3cdd.apk",
+    "icon": "windowcalc.png"
   }
 ]
