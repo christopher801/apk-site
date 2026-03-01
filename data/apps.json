@@ -4,7 +4,7 @@
     "description": "expense-tracker ede w swiv depans ou fasil epi jere lajan ou pi byen chak jou.",
     "version": "2.0.0",
     "size": "71.7",
-    "apkFile": "application-d68f0414-ec7e-4db2-bab0-d2f731c9c963.apk",
+    "apkFile": "expense-tracker.apk",
     "icon": "mon-app.png"
   },
 
@@ -13,7 +13,7 @@
     "description": "GlowHabit ede w bati epi swiv bon abitid chak jou.",
     "version": "1.0.0",
     "size": "APK size",
-    "apkFile": "application-d9ea0dc9-6528-471b-902d-9f99a783c7ca.apk",
+    "apkFile": "glowhabit.apk",
     "icon": "habit-tracker.png"
   },
   {
@@ -21,7 +21,7 @@
     "description": "Currency se yon aplikasyon pou konvèti lajan an tan reyèl, ak yon entèfas presi, rapid, epi fasil pou itilize.",
     "version": "1.0.0",
     "size": "57.7 MB",
-    "apkFile": "application-62e66f6f-3111-44b5-beee-9946081326fd.apk",
+    "apkFile": "currency.apk",
     "icon": "currency.png"
   },
   {
@@ -45,7 +45,7 @@
     "description": "App pou kalkile cotizaciones fenèt an poulgadas, rapid e offline.",
     "version": "1.0.0",
     "size": "69.1MB",
-    "apkFile": "application-8e2dd580-332e-4c04-830f-2ba993bc3cdd.apk",
+    "apkFile": "windowcalc.apk",
     "icon": "windowcalc.png"
   },
   {
@@ -53,7 +53,7 @@
     "description": "Fitnes Tracker se yon app pou swiv aktivite fizik ak pwogrè sante ou chak jou.",
     "version": "1.0.0",
     "size": "71.9",
-    "apkFile": "",
-    "icon": "fitnes-tracker.png"
+    "apkFile": "fitness-tracker.apk",
+    "icon": "fitness-tracker.png"
   }
 ]
