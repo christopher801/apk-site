@@ -29,7 +29,7 @@
     "description": "Calculator se yon aplikasyon rapid ak presi pou fè kalkil chak jou fasil.",
     "version": "1.0.9",
     "size": "55.6 MB",
-    "apkFile": "application-ada8ef86-f0bc-484e-ae59-331dfcdd3d0d.apk",
+    "apkFile": "calculator.apk",
     "icon": "calculator.png"
   },
   {
@@ -47,5 +47,13 @@
     "size": "69.1MB",
     "apkFile": "application-8e2dd580-332e-4c04-830f-2ba993bc3cdd.apk",
     "icon": "windowcalc.png"
+  },
+  {
+    "name": "fitness-tracker",
+    "description": "Fitnes Tracker se yon app pou swiv aktivite fizik ak pwogrè sante ou chak jou.",
+    "version": "1.0.0",
+    "size": "71.9",
+    "apkFile": "",
+    "icon": "fitnes-tracker.png"
   }
 ]
