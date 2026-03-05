@@ -1,89 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christopher's APK Store</title>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5681377933979422"
-     crossorigin="anonymous"></script>
-  <!-- Favicon SVG (nan folder assets/) -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <!-- CSS file linked (inline fallback + external) -->
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* fallback / inline style to ensure variables & basics even if external missing */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-    :root { --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --text-light: #475569; --accent: #10b981; --accent-dark: #059669; --border: #e2e8f0; --shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02); --radius: 1.5rem; --radius-sm: 0.75rem; }
-    body { background: var(--bg); color: var(--text); line-height: 1.5; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <title>AppHub · colorful mini store</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="alternate icon" href="./assets/favicon.ico">
+    <!-- CSS locked path -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Preload hint for fast icon fetch (optional but kind) -->
+    <link rel="preload" as="fetch" href="./data/apps.json" crossorigin="anonymous">
+    <!-- Google Font for modern look (safe, external but不影响结构) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) – purely for visual, path not restricted -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- STICKY HEADER with search bar -->
-  <header class="site-header">
-    <div class="container header-container">
-      <div class="logo-area">
-        <span class="logo-icon">📦</span>
-        <span class="logo-text">APK<span class="light">hub</span></span>
-      </div>
-      <div class="search-wrapper">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search apps...">
-        <span class="search-icon">🔍</span>
-      </div>
-      <div>
-        <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5681377933979422"
-     data-ad-slot="3929079946"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-      </div>
-      <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </header>
+    <!-- Sticky header with glass effect -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <i class="fa-solid fa-cube" style="color: #2b7a78; font-size: 1.8rem;"></i>
+                <h1 class="logo">App<span>Hub</span></h1>
+            </div>
 
-  <!-- MAIN CONTENT: app cards grid -->
-  <main class="container main-content">
-    <div class="apps-grid" id="appsGrid">
-      <!-- dynamically filled from apps.json -->
-      <div class="loading-message">Loading amazing apps...</div>
-    </div>
-  </main>
+            <!-- center search bar -->
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search apps, tools, games ..." aria-label="Search apps by name, description or category">
+            </div>
 
-  <!-- SIMPLE FOOTER -->
-    <!-- SIMPLE FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <span class="logo-icon">📦</span>
-          <span class="logo-text">APK<span class="light">hub</span></span>
+            <!-- right sort dropdown -->
+            <div class="sort-wrapper">
+                <label for="sortSelect" class="sort-label" aria-hidden="true"><i class="fa-solid fa-arrow-down-wide-short"></i></label>
+                <select id="sortSelect" class="sort-select" aria-label="Sort applications">
+                    <option value="name">📛 Name</option>
+                    <option value="size">💾 Size</option>
+                    <option value="updated">✨ Newest</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero with soft gradient -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Discover <span class="hero-gradient">My Apps</span></h2>
+            <p class="hero-sub">🚀 Lansman chak semèn · 🎯 Fasil pou itilize · 💯 Gratis</p>
+        </div>
+    </section>
+
+    <!-- main container -->
+    <main class="app-main">
+        <!-- loading spinner (hidden by default) -->
+        <div id="loadingSpinner" class="loading-spinner" role="status" aria-label="loading applications">
+            <div class="spinner"></div>
+            <span>Loading apps ...</span>
+        </div>
+
+        <!-- error message (hidden) -->
+        <div id="errorMessage" class="error-message" role="alert">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Failed to load apps. Please refresh.</span>
+        </div>
+
+        <!-- empty state (hidden) -->
+        <div id="emptyState" class="empty-state">
+            <i class="fa-regular fa-face-frown"></i>
+            <p>No apps match your search</p>
+            <small>try different keywords</small>
+        </div>
+
+        <!-- card grid -->
+        <div id="appGrid" class="app-grid"></div>
+    </main>
+
+    <!-- Updated Footer with more information and links -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>App<span>Hub</span></span>
+                </div>
+                <p class="footer-tagline">Discover amazing apps in a colorful way</p>
+                <div class="footer-social">
+                    <a href="https://x.com/christo97659411" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://github.com/christopher801" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/dopeneverbroagain?utm_source=qr&igsh=MTJseWtmNWRrYXk0eg==" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Trending Apps</a></li>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Editors' Choice</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Developer Portal</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
-        <div class="footer-info">
-          <p class="footer-name">Christopher's APK Store</p>
-          <p class="footer-desc">Telechaje aplikasyon android ou yo gratis epi fasil.</p>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 AppHub. All rights reserved. Made with <i class="fa-solid fa-heart" style="color: #ff6b6b;"></i> for app lovers</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="separator">•</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
         </div>
-        
-        <div class="footer-credits">
-          <p>Kreye ak ❤️ pa <strong>Christopher</strong></p>
-          <p class="copyright">&copy; 2026 - Tout dwa rezève</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- JAVASCRIPT: no frameworks, pure vanilla -->
-  <script src="js/app.js"></script>
-  <script>
-    // ensure app.js works even if path fails – inline backup
-    (function() {
-      // if app.js didn't load or fails, we still want something
-      window.__INLINE_FALLBACK = true;
-    })();
-  </script>
-  <!-- inline hidden json example (real data loads via fetch) -->
+    <!-- JS locked path -->
+    <script src="./js/script.js"></script>
 </body>
 </html>
