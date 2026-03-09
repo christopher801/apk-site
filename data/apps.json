@@ -62,5 +62,14 @@
     "apkFile": "fitness-tracker.apk",
     "icon": "fitness-tracker.png",
     "updated": "2026-03-04"
+  },
+  {
+    "name": "recipe-finder",
+    "description": "Recipe Finder se yon App ki ede ou jwenn resèt manje fasil ak repid.",
+    "version": "1.0.0",
+    "size": "67.3",
+    "apkFile": "recipe-finder.apk",
+    "icon": "recipe-finder.png",
+    "updated": "2026-03-08"
   }
 ]
