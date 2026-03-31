@@ -71,5 +71,14 @@
     "apkFile": "recipe-finder.apk",
     "icon": "recipe-finder.png",
     "updated": "2026-03-08"
+  },
+  {
+    "name": "marketplace",
+    "description": "Achte ak vann nan zòn ou — vit, fasil, dirèkteman sou WhatsApp.",
+    "version": "1.0.0",
+    "size": "67.6",
+    "apkFile": "marketplace.apk",
+    "icon": "marketplace.png",
+    "updated": "2026-03-30"
   }
 ]
