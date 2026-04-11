@@ -80,5 +80,14 @@
     "apkFile": "marketplace.apk",
     "icon": "marketplace.png",
     "updated": "2026-03-30"
+  },
+  {
+    "name": "calculator-vault",
+    "description": "Calculator Vault yon kalkilatè nòmal, men ki kache yon vault konplè.",
+    "version": "2.81.0",
+    "size": "76.80",
+    "apkFile": "calculator-vault.apk",
+    "icon": "calculator-vault.png",
+    "updated": "2026-04-11"
   }
 ]
