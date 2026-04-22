@@ -84,7 +84,7 @@
   {
     "name": "calculator-vault",
     "description": "Calculator Vault yon kalkilatè nòmal, men ki kache yon vault konplè.",
-    "version": "2.81.0",
+    "version": "2.89.0",
     "size": "85.25",
     "apkFile": "calc-vault.apk",
     "icon": "calc-vault.png",
