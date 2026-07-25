@@ -89,5 +89,14 @@
     "apkFile": "calc-vault.apk",
     "icon": "calc-vault.png",
     "updated": "2026-04-11"
+  },
+  {
+    "name": "planify",
+    "description": "Planify se yon aplikasyon tout-an-yon pou pwodiktivite pèsonèl — depans, revni, todo, nòt, rapèl, kalandriye, ak estatistik nan yon sèl kote.",
+    "version": "1.0.0",
+    "size": "73.8",
+    "apkFile": "planify.apk",
+    "icon": "planify-icon.png",
+    "updated": "2026-07-25"
   }
 ]
